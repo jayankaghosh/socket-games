@@ -1,0 +1,51 @@
+.ChatRoom {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  .Messages {
+    position: relative;
+    flex-grow: 1;
+    .MessageList {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      overflow-y: auto;
+      bottom: 0;
+      .MessageItem {
+        margin: 1rem;
+        &[data-is_self="false"] {
+          text-align: right;
+          .MessageBubble {
+            background: #fef5f4;
+          }
+        }
+        .MessageBubble {
+          background: #e3fde4;
+          box-shadow: 0 0 3px #999999;
+          display: inline-block;
+          width: 75%;
+          border-radius: 8px;
+          .From {
+            font-size: 0.8rem;
+            padding: 0.3rem 1rem;
+            .Name {
+              margin-bottom: 0.3rem;
+              color: #555555
+            }
+            .Date {
+              color: #999999;
+            }
+          }
+          .Message {
+            padding: 1rem;
+          }
+        }
+      }
+    }
+  }
+  .FormContainer {
+    .TextField {
+      width: 100%;
+    }
+  }
+}

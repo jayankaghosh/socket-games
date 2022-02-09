@@ -1,0 +1,22 @@
+.gameMaster {
+  width: 100vw;
+  height: 100vh;
+}
+.popup {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  text-align: center;
+  align-items: center;
+  .popupBody {
+    width: 75%;
+    margin: auto;
+    display: inline-block;
+    color: #0a0a0a;
+    padding: 1rem;
+    background: #f0f0f0;
+    button {
+      margin-top: 1rem;
+    }
+  }
+}

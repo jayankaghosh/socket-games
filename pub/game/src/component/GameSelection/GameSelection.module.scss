@@ -1,0 +1,15 @@
+.GameSelection {
+  padding-top: 1rem;
+  text-align: center;
+  h2 {
+    padding: 1rem;
+  }
+  @media only screen and (min-width: 800px) {
+    button {
+      width: 30%;
+      margin-left: auto !important;
+      margin-right: auto !important;
+      display: inline-block;
+    }
+  }
+}

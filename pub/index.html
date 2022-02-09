@@ -1,0 +1,55 @@
+<html>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        #game-canvas {
+            background: blueviolet;
+            width: 100vw;
+            height: 100vh;
+        }
+    </style>
+    <body>
+        <div id="game-canvas">
+
+        </div>
+        <script>
+            var GameMaster = function (container, webSocket) {
+                this.container = container;
+                this.socket = webSocket;
+                this.socket.onmessage = function (msg) {
+                    this.parseResponse(msg.data);
+                }.bind(this);
+            }
+            GameMaster.prototype = {
+                parseResponse: function(response) {
+                    try {
+                        response = JSON.parse(response);
+                        if (!response || !response.type || !response.data) {
+                            throw "Invalid data";
+                        }
+                        console.log(response);
+                    } catch (e) {
+                        console.error(e);
+                    }
+                },
+                start: function () {
+                    var userData =
+                },
+                getUserData: function () {
+                    return JSON.parse(localStorage.getItem('userData'));
+                },
+                setUserData: function (data) {
+                    return localStorage.setItem('userData', JSON.stringify(data));
+                }
+            }
+            var gameMaster = new GameMaster(
+                document.querySelector('#game-canvas'),
+                new WebSocket('ws://localhost:8080')
+            );
+            gameMaster.start();
+
+        </script>
+    </body>
+</html>
